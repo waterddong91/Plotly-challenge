@@ -47,8 +47,7 @@ function metadataTable(sample) {
         var information = metadata.filter(samples => samples.id == selectedID)[0];
         var panel = d3.select("#sample-metadata");
         panel.html("");
-        var demographics = Object.entries(information)
-        demographics.forEach((item) => {
+        var sampleData= Object.entries(information).forEach((item) => {
         panel.append("h6").text(item[0]+': '+item[1]);
         });
         });
