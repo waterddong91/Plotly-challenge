@@ -72,7 +72,6 @@ function barchart(sample){
     var trace = {
         x: value,
         y: otu,
-        //text: otuLabels,
         type: 'bar',
         orientation: 'h'
 
