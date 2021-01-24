@@ -44,7 +44,7 @@ function metadataTable(sample) {
             newoption.text(sample);   
             var selectedID = dropdownMenu.node().value;
 
-        var information = metadata.filter(samples => samples.id == selectedID)[0];
+        var information = metadata.filter(samples => samples.id == sample)[0];
         var panel = d3.select("#sample-metadata");
         panel.html("");
         var sampleData= Object.entries(information).forEach((item) => {
