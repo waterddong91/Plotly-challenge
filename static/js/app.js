@@ -1,20 +1,16 @@
 // Set Values from DataSamples
 d3.json("static/js/samples.json").then(function(data){
     var data = data;
-    var names = data.names;
-    var samples = data.samples;
     var metadata = data.metadata;
+    var samples = data.samples;
+    var names = data.names;
     names.forEach(function(sample) {
     var dropdownMenu = d3.select("#selDataset");
     var newoption = dropdownMenu.append("option");
     newoption.attr('value', sample);
     newoption.text(sample);   
     var selectedID = dropdownMenu.node().value;
-    //console.log(samples)
-
-    // Set the first(default) variable 
-    
-    });
+        });
 });
 
 d3.json("static/js/samples.json").then(function(data){
@@ -39,8 +35,8 @@ function metadataTable(sample) {
         
     d3.json("static/js/samples.json").then(function(data){
         var data = data;
-        var names = data.names;
         var metadata = data.metadata;
+        var names = data.names;
         names.forEach(function(sample) {
             var dropdownMenu = d3.select("#selDataset");
             var newoption = dropdownMenu.append("option");
@@ -72,11 +68,7 @@ function barchart(sample){
     var value = array.sample_values.slice(0,10).sort((a, b) => b-a);
     var otu = array.otu_ids.map(sample => "OTU" + sample);
     
-    //otu.sort((a, b) => b-a);
-    //var otuLabels = array.otu_labels.slice(0,10);
-        
-    //console.log(array);
-
+   
     //plotting
     var trace = {
         x: value,
@@ -105,7 +97,7 @@ function bubblechart(sample){
     var array = newID[0];
     var value = array.sample_values;
     var otu = array.otu_ids;
-    otuLabels = array.otu_labels
+    var otuLabels = array.otu_labels
         
     //console.log(array);
 
